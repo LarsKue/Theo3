@@ -74,9 +74,11 @@ def main(argv: list) -> int:
         phi_lit = analyt(xlit, length)
 
         with open(f"{N}.txt", "w+") as f:
+            phi_lit_comp = analyt(x, length)
             for i in range(N):
-                f.write(f"phi: {phi[i]:8.4f}    lit: {phi_lit[i]:8.4f}    dev: {deviation(phi[i], phi_lit[i]):.4f}\n")
+                f.write(f"phi: {phi[i]:8.4f}    lit: {phi_lit_comp[i]:8.4f}    dev: {deviation(phi[i], phi_lit_comp[i]):.4f}\n")
 
+        plt.figure(figsize=(10, 8))
         plt.plot(x, phi, label="Näherung")
         plt.plot(xlit, phi_lit, label="Analytische Lösung")
         plt.xlabel("x")
