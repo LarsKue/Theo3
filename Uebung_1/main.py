@@ -31,7 +31,7 @@ def main(argv: list) -> int:
     x, y, z = np.meshgrid(
         np.arange(-1, 1, 2 / 8),  # x
         np.arange(-1, 1, 2 / 8),  # y
-        np.arange(-1, 1, 4 / 8)   # z
+        np.arange(-1, 1, 2 / 8)   # z
     )
 
     # directional data for the arrows
