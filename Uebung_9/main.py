@@ -73,8 +73,9 @@ def main(argv: list) -> int:
         phi = h ** 2 * np.dot(np.dot(RI, LI), dp)
         phi_lit = analyt(xlit, length)
 
-        # for i in range(N):
-        #     print(f"phi: {phi[i]:8.4f}    lit: {phi_lit[i]:8.4f}    dev: {deviation(phi[i], phi_lit[i]):.4f}")
+        with open(f"{N}.txt", "w+") as f:
+            for i in range(N):
+                f.write(f"phi: {phi[i]:8.4f}    lit: {phi_lit[i]:8.4f}    dev: {deviation(phi[i], phi_lit[i]):.4f}\n")
 
         plt.plot(x, phi, label="Näherung")
         plt.plot(xlit, phi_lit, label="Analytische Lösung")
