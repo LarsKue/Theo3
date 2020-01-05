@@ -78,6 +78,15 @@ def main(argv: list) -> int:
             for i in range(N):
                 f.write(f"phi: {phi[i]:8.4f}    lit: {phi_lit_comp[i]:8.4f}    dev: {deviation(phi[i], phi_lit_comp[i]):.4f}\n")
 
+        # plt.figure(figsize=(10, 8))
+        # plt.plot(x, deviation(phi, phi_lit_comp), color="green")
+        # plt.xlabel("x")
+        # plt.ylabel("Abweichung [%]")
+        # plt.title(f"N = {N}")
+        # plt.savefig("Deviation500.png")
+        # plt.show()
+        # return 0
+
         plt.figure(figsize=(10, 8))
         plt.plot(x, phi, label="Näherung")
         plt.plot(xlit, phi_lit, label="Analytische Lösung")
